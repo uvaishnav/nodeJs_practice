@@ -89,7 +89,8 @@ app.put(`/players/:playerId/`, async (request, response) => {
     set 
     player_name = '${playerName}',
     jersey_number = ${jerseyNumber},
-    role = '${role}';`;
+    role = '${role}'
+    where player_id = ${playerId};`;
 
   await db.run(putplayerQuery);
   response.send("Player Details Updated");
